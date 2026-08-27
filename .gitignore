@@ -11,3 +11,6 @@ wheels/
 
 # Personal financial data — never commit real transactions
 data/
+
+# Secrets — Supabase keys, Modal endpoint URL
+.env

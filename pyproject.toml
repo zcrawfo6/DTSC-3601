@@ -10,6 +10,11 @@ dependencies = [
     "pandas>=3.0.5",
     "plotly>=6.9.0",
     "streamlit>=1.62.0",
+    "supabase>=2.31.0",
+    "python-dotenv>=1.0.1",
+    "requests>=2.32.0",
+    "modal>=0.70.0",
+    "pip-system-certs>=5.3",
 ]
 
 [tool.uv]
