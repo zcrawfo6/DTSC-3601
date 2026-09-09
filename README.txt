@@ -11,5 +11,10 @@ underlying dataset in table form.
 - Dropdown selectors for X-axis and Y-axis variables
 - Optional "Color by" dropdown to add a third dimension via color gradient
 - Interactive Plotly scatter plot (zoom, pan, hover for values)
-- Expandable raw data table showing sepal length, sepal width, 
+- Expandable raw data table showing sepal length, sepal width,
   petal length, petal width, and species for each record
+
+## Web dashboard (web/)
+The same dataset also powers a Next.js + shadcn/ui site in `web/`, reading
+live from the Supabase table in `cloud/schema.sql` and deployed on Vercel.
+See `web/README.md` for setup and deployment.
