@@ -91,8 +91,63 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Purpose / what & why */}
+      <section id="about" className="border-b border-border/80 bg-card/30">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-20 sm:px-6 md:grid-cols-5">
+          <div className="md:col-span-3">
+            <Badge variant="outline" className="mb-4 w-fit border-primary/30 bg-primary/10 text-primary">
+              What this site is
+            </Badge>
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              A course project that turns a classroom dataset into a real,
+              live web app
+            </h2>
+            <div className="mt-4 space-y-3 text-muted-foreground">
+              <p>
+                This site was built for <strong className="text-foreground">DTSC 3601</strong> to
+                show what exploratory data analysis looks like as an actual
+                product instead of a notebook: a Postgres database on
+                Supabase holds the data, a Next.js site queries it live on
+                every page load, and the whole thing is deployed on Vercel
+                straight from GitHub.
+              </p>
+              <p>
+                The dataset itself — sepal and petal measurements for three
+                iris species — is intentionally simple. The point isn&apos;t
+                the flowers; it&apos;s the pipeline: <strong className="text-foreground">
+                database → server → interactive UI</strong>, the same shape
+                as a production analytics dashboard, just small enough to
+                read in one sitting.
+              </p>
+              <p>
+                Use it to see how far a spreadsheet-shaped dataset can go —
+                or as a template for wiring your own Supabase table into a
+                shadcn/ui dashboard.
+              </p>
+            </div>
+          </div>
+
+          <div className="md:col-span-2">
+            <Card className="border-border/80 bg-card/60">
+              <CardHeader>
+                <CardTitle className="text-base">How to use it</CardTitle>
+                <CardDescription>Four stops, in order, on the dashboard page.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ol className="space-y-4">
+                  <UsageStep n={1} title="Overview" description="Row/column counts and what type each column is." />
+                  <UsageStep n={2} title="Statistics" description="Mean, std, quartiles per column, plus species counts." />
+                  <UsageStep n={3} title="Chart lab" description="Pick a chart type and axes; the chart updates instantly." />
+                  <UsageStep n={4} title="Raw data" description="Search and page through every row behind the charts." />
+                </ol>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Feature grid */}
-      <section id="about" className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <div className="mb-10 max-w-2xl">
           <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
             One dataset, three ways to look at it
@@ -157,6 +212,28 @@ function StatPill({ label, value }: { label: string; value: string }) {
       <div className="text-2xl font-semibold tabular-nums">{value}</div>
       <div className="text-xs text-muted-foreground">{label}</div>
     </div>
+  );
+}
+
+function UsageStep({
+  n,
+  title,
+  description,
+}: {
+  n: number;
+  title: string;
+  description: string;
+}) {
+  return (
+    <li className="flex gap-3">
+      <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">
+        {n}
+      </span>
+      <div>
+        <p className="text-sm font-medium text-foreground">{title}</p>
+        <p className="text-sm text-muted-foreground">{description}</p>
+      </div>
+    </li>
   );
 }
 
