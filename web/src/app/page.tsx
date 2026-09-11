@@ -168,7 +168,7 @@ export default async function Home() {
           <FeatureCard
             icon={<LineChart className="size-5" />}
             title="Chart lab"
-            description="Histograms, scatter plots, box plots by species, bar charts, a correlation heatmap, and line charts — pick the axes, get the chart."
+            description="Histograms, scatter plots, box plots by species, bar charts, and line charts — pick the axes, get the chart."
           />
           <FeatureCard
             icon={<Database className="size-5" />}

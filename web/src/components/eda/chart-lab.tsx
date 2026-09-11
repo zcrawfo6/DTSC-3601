@@ -15,7 +15,6 @@ import { HistogramChart } from "@/components/eda/histogram-chart";
 import { ScatterChart } from "@/components/eda/scatter-chart";
 import { BoxPlotChart } from "@/components/eda/box-plot-chart";
 import { CategoryBarChart, type Aggregation } from "@/components/eda/category-bar-chart";
-import { CorrelationHeatmap } from "@/components/eda/correlation-heatmap";
 import { TrendLineChart } from "@/components/eda/trend-line-chart";
 import { COLUMN_LABELS, IrisSample, NUMERIC_COLUMNS, NumericColumn } from "@/lib/eda-data";
 
@@ -24,7 +23,6 @@ const CHART_TYPES = [
   "Scatter plot",
   "Box plot",
   "Bar chart",
-  "Correlation heatmap",
   "Line chart",
 ] as const;
 type ChartType = (typeof CHART_TYPES)[number];
@@ -221,8 +219,6 @@ export function ChartLab({ rows }: { rows: IrisSample[] }) {
               />
             </>
           )}
-
-          {chartType === "Correlation heatmap" && <CorrelationHeatmap rows={rows} />}
 
           {chartType === "Line chart" && (
             <>
