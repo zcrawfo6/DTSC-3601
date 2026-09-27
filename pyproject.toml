@@ -15,6 +15,9 @@ dependencies = [
     "requests>=2.32.0",
     "modal>=0.70.0",
     "pip-system-certs>=5.3",
+    "scikit-learn>=1.9.1",
+    "joblib>=1.6.0",
+    "fastapi[standard]>=0.141.1",
 ]
 
 [tool.uv]
